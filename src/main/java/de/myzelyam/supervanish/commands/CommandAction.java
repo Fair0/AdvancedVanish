@@ -22,9 +22,9 @@ import lombok.RequiredArgsConstructor;
 @RequiredArgsConstructor
 public enum CommandAction {
     VANISH_SELF(
-            "sv.use",
+            "av.use",
             false,
-            "/sv [on|off]",
+            "/av [on|off]",
             "Toggles your visibility") {
         @Override
         public boolean checkPermission(CommandSender sender, SuperVanish plugin) {
@@ -33,59 +33,59 @@ public enum CommandAction {
         }
     },
     VANISH_OTHER(
-            "sv.others",
+            "av.others",
             true,
-            "/sv [on|off] <player>",
+            "/av [on|off] <player>",
             "Shows or hides a player"),
     VANISHED_LIST(
-            "sv.list",
+            "av.list",
             true,
-            "/sv list",
+            "/av list",
             "Shows a list of vanished players"),
     BROADCAST_LOGIN(
-            "sv.login",
+            "av.login",
             false,
-            "/sv login",
+            "/av login",
             "Broadcasts a fake login message"),
     BROADCAST_LOGOUT(
-            "sv.logout",
+            "av.logout",
             false,
-            "/sv logout",
+            "/av logout",
             "Broadcasts a fake logout message"),
     TOGGLE_ITEM_PICKUPS(
-            "sv.toggleitems",
+            "av.toggleitems",
             false,
-            "/sv tipu",
+            "/av tipu",
             "Toggles picking up items") {
         @Override
         public boolean checkPermission(CommandSender sender, SuperVanish plugin) {
-            return sender.hasPermission(getMainPermission()) || sender.hasPermission("sv.toggleitempickups");
+            return sender.hasPermission(getMainPermission()) || sender.hasPermission("av.toggleitempickups");
         }
     },
     RECREATE_FILES(
-            "sv.recreatefiles",
+            "av.recreatefiles",
             true,
-            "/sv recreatefiles",
+            "/av recreatefiles",
             "Recreates the config") {
         @Override
         public boolean checkPermission(CommandSender sender, SuperVanish plugin) {
-            return sender.hasPermission(getMainPermission()) || sender.hasPermission("sv.updatecfg");
+            return sender.hasPermission(getMainPermission()) || sender.hasPermission("av.updatecfg");
         }
     },
     RELOAD(
-            "sv.reload",
+            "av.reload",
             true,
-            "/sv reload",
+            "/av reload",
             "Reloads all settings and messages"),
     PRINT_STACKTRACE(
-            "sv.stacktrace",
+            "av.stacktrace",
             true,
-            "/sv stacktrace",
+            "/av stacktrace",
             "Logs info for a bug report"),
     SHOW_HELP(
-            "sv.help",
+            "av.help",
             true,
-            "/sv help",
+            "/av help",
             "Shows this help page");
 
     /**
